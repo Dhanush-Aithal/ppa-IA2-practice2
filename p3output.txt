@@ -1,1 +1,90 @@
+gcc -g p3original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x84b: file p3original.c, line 31.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2-1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p3original.c:31
+31    int num=input_number();
+(gdb) s
+input_number () at p3original.c:3
+3   {
+(gdb) n
+5     printf("enter any number \n");
+(gdb) n
+enter any number 
+6     scanf ("%d",&num);
+(gdb) n
+2
+7     return num;
+(gdb) n
+8   }
+(gdb) p num 
+$1 = 2
+(gdb) n
+main () at p3original.c:32
+32    int result =is_composite(num);
+(gdb) s
+is_composite (n=2) at p3original.c:11
+11    for (int i = 2; i <= n/2; i++)
+(gdb) n
+16    return 0;
+(gdb) n
+17  }
+(gdb) n
+main () at p3original.c:33
+33    output(num,result);
+(gdb) s
+output (n=2, iscomposite=0) at p3original.c:20
+20    if(iscomposite ==1)
+(gdb) n
+26      printf("%d is not a composite number\n",n);
+(gdb) n
+2 is not a composite number
+28  }
+(gdb) n
+main () at p3original.c:34
+34    return 0;
+(gdb) n
+35  }
+(gdb) l 1,35
+1   #include<stdio.h>
+2   int input_number()
+3   {
+4     int num;
+5     printf("enter any number \n");
+6     scanf ("%d",&num);
+7     return num;
+8   }
+9   int is_composite(int n)
+10  {
+11    for (int i = 2; i <= n/2; i++)
+12    {
+13      if(n%i == 0)
+14      return 1;
+15    }
+16    return 0;
+17  }
+18  void output(int n, int iscomposite)
+19  {
+20    if(iscomposite ==1)
+21   {
+22    printf("%d is a composite number\n",n);
+23   }
