@@ -1,4 +1,4 @@
-# Prerequisites
+gcc # Prerequisites
 *.d
 
 # Object files
