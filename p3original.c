@@ -15,7 +15,7 @@ int is_composite(int n)
   }
   return 0;
 }
-void output(int n, int iscomposite)
+void output(int n,int iscomposite)
 {
   if(iscomposite ==1)
  {
