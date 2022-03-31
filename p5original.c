@@ -7,7 +7,7 @@ int input()
   scanf("%d", &num);
   return num;
 }
-int gcd(int a, int b)
+int gcd(int a,int b)
 {
     int large = a > b ? a : b;
     int small = a < b ? a : b;
