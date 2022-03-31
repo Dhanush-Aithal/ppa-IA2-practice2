@@ -14,7 +14,7 @@ int check_scalene(int a,int b,int c)
   }
   return 0;
 }
-void output(int a,int b,int c,int isscalene)
+void output(int a, int b, int c,int isscalene)
 {
   if(isscalene==1)
   {
