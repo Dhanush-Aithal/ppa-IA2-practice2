@@ -4,7 +4,7 @@ void input(float *base ,float *height)
   printf("Enter the base and height of the triange respectively to find its area \n");
   scanf("%f%f",base,height);
 }
-void find_area(float base, float height, float *area)
+void find_area(float base,float height,float *area)
 {
   *area=(base*height)/2;
 }
